@@ -1,11 +1,11 @@
 # Software Development
 ## User Specifications
 
-# Target Users
+## Target Users
 Year 11 Software Engineering students
 
-# Users must be able to:
-- Choose and algorithim
+## Users must be able to:
+- Choose an algorithm
 - Enter numbers
 - Start the algorithm
 - Reset and try again
