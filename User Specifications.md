@@ -1,7 +1,7 @@
-# Software Development
-## User Specifications
+# Software Development:
+## User Specifications:
 
-## Target Users
+## Target Users:
 Year 11 Software Engineering students
 
 ## Users must be able to:
