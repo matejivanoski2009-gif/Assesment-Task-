@@ -1,19 +1,12 @@
 # Software Development:
 ## Requirements Definition:
 
-### The system will be an interactive educational website designed for Year 11 Software Engineering Students. The purpose of the system is to help students revise key topics such as algorithms, data types, variables, selection statements, iteration and debugging.
+### The system will be an interactive educational website designed for Year 11 Software Engineering Students about algorithms. The purpose of the system is to aid students in understanding ideas like sequence, iterations and selection via short interactive mini games.
 
-## Functional Requirements:
-### The system must
-- Run in a web browser
-- Allow user input
-- Visually display the algorithm
-- Use buttons for Start, Pause, Reset, etc
-- Use at least one data structure
+This interactive website must run in a web browser and must include feedback to user behaviorus like clicking, selecting, and entering, for features like starting, pausing, and resetting. The system needs to involve a scoring board that illustrates the score as the user progresses.
 
-## Non-Functional Requirements:
-### The system must:
-- Be easy to navigate
-- Have clear instructions
-- Have simple colours and readable fonts
-- Run smoothly
+Other Functional Requirements involve:
+- Being easy to navigate
+- Having clear instructions
+- Having simple colours and readable fonts
+- Running smoothly
