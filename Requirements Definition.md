@@ -1,7 +1,7 @@
 # Software Development:
 ## Requirements Definition:
 
-### The system will be an interactive educational website designed for Year 11 Software Engineering Students about algorithms. The purpose of the system is to aid students in understanding key ideas like sequence, iterations, selection and other terms that enables algorithims to run via short interactive mini games.
+The system will be an interactive educational website designed for Year 11 Software Engineering Students about algorithms. The purpose of the system is to aid students in understanding key ideas like sequence, iterations, selection and other terms that enables algorithims to run via short interactive mini games.
 
 This interactive website must run in a web browser and must include feedback to user behaviourslike clicking, selecting, and entering, for features like starting, pausing, and resetting. The system needs to involve a scoring board that illustrates the score as the user progresses.
 
