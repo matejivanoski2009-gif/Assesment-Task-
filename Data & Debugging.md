@@ -9,4 +9,6 @@ This data dictionary highlights all the main variables utilised in the system an
 
 The data dictionary makes the program much easier to understand because you can see how the data is organised and utilised throughout the system.
 
+---
+
 ## Report on Debugging Tools:
