@@ -16,4 +16,4 @@ The overall design will focus on simplicity and usability so that students can f
 ## Functionality:
 Furthermore, the user will interact with the website by selecting, clicking and entering. The system will check the response via the conditional statements and immediately provide feedback demonstrating whether the response is correct or incorrect.
 
-The system will keep track of their score while the student plays. This will be achieved through Iteration to move through multiple challenges in sequence. After all the challenges are done, the system will display a result illustrating the score and underneath an option to retry or quit.
+The system will keep track of their score while the student plays. This will be achieved through Iteration to move through multiple challenges in sequence. After all the challenges are done, the system will display a result illustrating the score and an option to retry or quit.
