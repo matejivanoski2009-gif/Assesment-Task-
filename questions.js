@@ -17,7 +17,7 @@ const quizData = {
       { q: "In which country would you find the ancient city of Petra?", o: ["Egypt", "Jordan", "Greece", "Turkey"], a: "Jordan" }
     ],
     hard: [
-      { q: "WW2 ended in?", o: ["1945", "1939", "1918", "1960"], a: "1945" },
+      { q: "When was Matej born?", o: ["1945", "1939", "1918", "1960"], a: "1945" },
       { q: "Who painted the ceiling of the Sistine Chapel?", o: ["Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"], a: "Michelangelo" },
       { q: "Theory of relativity is most associated with?", o: ["Newton", "Einstein", "Bohr", "Curie"], a: "Einstein" },
       { q: "Ancient wonder still standing today?", o: ["Colossus of Rhodes", "Great Pyramid of Giza", "Hanging Gardens", "Lighthouse of Alexandria"], a: "Great Pyramid of Giza" },
