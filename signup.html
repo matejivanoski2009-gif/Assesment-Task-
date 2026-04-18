@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign up — ASCC Quiz</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+<script src="audio.js" defer></script>
+</head>
+<body data-page="signup">
+
+<div class="top-marquee" role="banner">
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <span class="marquee-segment">All Saints Catholic College · Software Engineering Quiz · </span>
+      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
+      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
+    </div>
+  </div>
+</div>
+
+<a
+  href="https://ascc.syd.catholic.edu.au/"
+  class="school-logo-link"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit All Saints Catholic College website"
+>
+  <img src="school-logo.png" alt="" class="school-logo">
+</a>
+
+<footer class="page-footer">
+  <span class="footer-author">Made by Matej Ivanoski</span>
+  <span class="footer-copy" title="All rights reserved" aria-label="All rights reserved">©</span>
+</footer>
+
+<div class="bottom-controls" role="group" aria-label="Theme and sound">
+  <button type="button" id="muteToggle" class="toolbar-btn mute-toggle" aria-pressed="false">
+    Mute
+  </button>
+  <button type="button" id="themeToggle" class="toolbar-btn theme-toggle" aria-label="Switch theme">
+    Light mode
+  </button>
+</div>
+
+<main class="standalone-page">
+  <div id="auth-toast" class="toast-host" aria-live="polite"></div>
+  <div class="standalone-card">
+    <a href="index.html" class="standalone-back auth-link btn-secondary">&larr; Back to quiz</a>
+    <h1 class="standalone-title">Sign up</h1>
+    <p class="standalone-lead">Create an account to track XP and collect badges.</p>
+
+    <input type="text" id="signupUsername" placeholder="Username" autocomplete="username" maxlength="32" />
+    <input type="password" id="signupPassword" placeholder="Password (min 4)" autocomplete="new-password" />
+    <input type="password" id="signupPassword2" placeholder="Confirm password" autocomplete="new-password" />
+    <button type="button" id="signupSubmit" class="auth-submit">Create account</button>
+
+    <p class="standalone-footer-link">
+      Already have an account? <a href="login.html">Log in</a>
+    </p>
+  </div>
+</main>
+
+<script src="profile.js" defer></script>
+</body>
+</html>
