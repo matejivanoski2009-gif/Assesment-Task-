@@ -8,6 +8,8 @@
   const MEDIA_VOLUME = 0.5;
   const SYNTH_MASTER_PEAK = 0.38;
 
+  let currentVolume = parseFloat(localStorage.getItem("ascc-quiz-volume") || "0.5");
+
   /** @type {"media" | "synth" | null} */
   let ambientMode = null;
   let mediaUnavailable = false;
@@ -29,6 +31,29 @@
     syncMuteButton();
     if (muted) fadeAmbientOut();
     else tryStartAmbient();
+  }
+
+  function setVolume(volume) {
+    currentVolume = Math.max(0, Math.min(1, volume));
+    localStorage.setItem("ascc-quiz-volume", currentVolume.toString());
+    syncVolumeSlider();
+    if (mediaAudio && !isMuted()) {
+      mediaAudio.volume = currentVolume;
+    }
+    if (ambientMaster && !isMuted()) {
+      ambientMaster.gain.value = currentVolume * SYNTH_MASTER_PEAK;
+    }
+  }
+
+  function getVolume() {
+    return currentVolume;
+  }
+
+  function syncVolumeSlider() {
+    const slider = document.getElementById("volumeSlider");
+    if (slider) {
+      slider.value = Math.round(currentVolume * 100);
+    }
   }
 
   function toggleMuted() {
@@ -101,7 +126,7 @@
       el.pause();
       return "abort";
     }
-    rampMediaVolume(el, 0, MEDIA_VOLUME, AMBIENT_FADE_IN_MS);
+    rampMediaVolume(el, 0, currentVolume, AMBIENT_FADE_IN_MS);
     return "media";
   }
 
@@ -118,7 +143,7 @@
       mediaAudio.pause();
       return;
     }
-    rampMediaVolume(mediaAudio, 0, MEDIA_VOLUME, AMBIENT_FADE_IN_MS);
+    rampMediaVolume(mediaAudio, 0, currentVolume, AMBIENT_FADE_IN_MS);
   }
 
   function fadeMediaOut() {
@@ -194,7 +219,7 @@
         ambientMaster.gain.cancelScheduledValues(now);
         ambientMaster.gain.setValueAtTime(0, now);
         ambientMaster.gain.linearRampToValueAtTime(
-          SYNTH_MASTER_PEAK,
+          SYNTH_MASTER_PEAK * currentVolume,
           now + AMBIENT_FADE_IN_MS / 1000
         );
       } catch {
@@ -261,15 +286,25 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     syncMuteButton();
+    syncVolumeSlider();
     const muteBtn = document.getElementById("muteToggle");
     if (muteBtn) {
       muteBtn.addEventListener("click", () => toggleMuted());
+    }
+    const volumeSlider = document.getElementById("volumeSlider");
+    if (volumeSlider) {
+      volumeSlider.addEventListener("input", (e) => {
+        setVolume(e.target.value / 100);
+      });
     }
     document.addEventListener("pointerdown", onFirstPointer, true);
   });
 
   window.QuizAudio = {
     isMuted,
-    tryStartAmbient
+    tryStartAmbient,
+    setVolume,
+    getVolume,
+    syncVolumeSlider
   };
 })();

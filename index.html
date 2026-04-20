@@ -1,146 +1,144 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<title>All Saints Catholic College — Software Engineering Quiz</title>
-<link rel="stylesheet" href="style.css">
-<script src="theme.js"></script>
-<script src="audio.js" defer></script>
+  <meta charset="UTF-8">
+  <title>All Saints Catholic College — Software Engineering Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="audio.js" defer></script>
 </head>
 
 <body data-page="home">
 
-<div class="top-marquee" role="banner">
-  <div class="marquee-viewport">
-    <div class="marquee-track">
-      <span class="marquee-segment">All Saints Catholic College · Software Engineering Quiz · </span>
-      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
-      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
+  <div class="top-marquee" role="banner">
+    <div class="marquee-viewport">
+      <div class="marquee-track">
+        <span class="marquee-segment">All Saints Catholic College · Software Engineering Quiz · </span>
+        <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz ·
+        </span>
+        <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz ·
+        </span>
+      </div>
     </div>
   </div>
-</div>
 
-<a
-  href="https://ascc.syd.catholic.edu.au/"
-  class="school-logo-link"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Visit All Saints Catholic College website"
->
-  <img src="school-logo.png" alt="" class="school-logo">
-</a>
+  <a href="https://ascc.syd.catholic.edu.au/" class="school-logo-link" target="_blank" rel="noopener noreferrer"
+    aria-label="Visit All Saints Catholic College website">
+    <img src="school-logo.png" alt="" class="school-logo">
+  </a>
 
-<div id="user-menu-wrap" class="user-menu-wrap" hidden>
-  <span id="userMenuName" class="user-menu-name"></span>
-  <div class="user-menu-inner">
-    <button
-      type="button"
-      id="userMenuBtn"
-      class="user-menu-trigger"
-      aria-haspopup="true"
-      aria-expanded="false"
-      aria-label="Account menu"
-    >
-      <img id="userMenuAvatar" class="user-menu-avatar" alt="" />
-      <span id="userMenuInitial" class="user-menu-initial" aria-hidden="true"></span>
-    </button>
-    <div id="userMenuDropdown" class="user-menu-dropdown" role="menu" hidden>
-      <a href="profile.html" class="user-menu-item" role="menuitem">Profile</a>
-      <button type="button" id="userMenuLogout" class="user-menu-item user-menu-item-btn" role="menuitem">
-        Log out
+  <div id="user-menu-wrap" class="user-menu-wrap" hidden>
+    <span id="userMenuName" class="user-menu-name"></span>
+    <div class="user-menu-inner">
+      <button type="button" id="userMenuBtn" class="user-menu-trigger" aria-haspopup="true" aria-expanded="false"
+        aria-label="Account menu">
+        <img id="userMenuAvatar" class="user-menu-avatar" alt="" />
+        <span id="userMenuInitial" class="user-menu-initial" aria-hidden="true"></span>
       </button>
+      <div id="userMenuDropdown" class="user-menu-dropdown" role="menu" hidden>
+        <a href="profile.html" class="user-menu-item" role="menuitem">Profile</a>
+        <button type="button" id="userMenuLogout" class="user-menu-item user-menu-item-btn" role="menuitem">
+          Log out
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
-<footer class="page-footer">
-  <span class="footer-author">Made by Matej Ivanoski</span>
-  <span class="footer-copy" title="All rights reserved" aria-label="All rights reserved">©</span>
-</footer>
+  <footer class="page-footer">
+    <span class="footer-author">Made by Matej Ivanoski</span>
+    <span class="footer-copy" title="All rights reserved" aria-label="All rights reserved">©</span>
+  </footer>
 
-<div class="bottom-controls" role="group" aria-label="Theme and sound">
-  <button type="button" id="muteToggle" class="toolbar-btn mute-toggle" aria-pressed="false">
-    Mute
-  </button>
-  <button type="button" id="themeToggle" class="toolbar-btn theme-toggle" aria-label="Switch theme">
-    Light mode
-  </button>
-</div>
-
-<!-- START SCREEN -->
-<div id="start-screen">
-  <div id="toast-start" class="toast-host" aria-live="polite"></div>
-  <div class="start-info-wrap">
-    <button
-      type="button"
-      class="start-info-btn"
-      aria-describedby="start-info-tooltip"
-      aria-label="How the quiz works"
-    >
-      <span aria-hidden="true" class="start-info-icon">&#8505;</span>
+  <div class="bottom-controls" role="group" aria-label="Theme and sound">
+    <div class="volume-control">
+      <label for="volumeSlider" class="volume-label">Volume</label>
+      <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50" step="1">
+    </div>
+    <button type="button" id="muteToggle" class="toolbar-btn mute-toggle" aria-pressed="false">
+      Mute
     </button>
-    <p id="start-info-tooltip" class="start-info-tooltip" role="tooltip">
-      There are three levels: easy, medium, and hard. You need at least
-      <strong>70%</strong> correct on each level to advance to the next one.
-    </p>
-  </div>
-  <div id="guest-block">
-    <h2>Enter Your Name</h2>
-    <input type="text" id="username" placeholder="Your name (guest)..." maxlength="40" />
-    <p class="guest-hint">Or <a href="login.html">log in</a> / <a href="signup.html">sign up</a> to save XP and badges.</p>
+    <button type="button" id="themeToggle" class="toolbar-btn theme-toggle" aria-label="Switch theme">
+      Light mode
+    </button>
   </div>
 
-  <div id="logged-in-bar" class="logged-in-bar" style="display: none;">
-    <p class="logged-in-text">Playing as <strong id="sessionDisplayName"></strong></p>
-    <p class="logged-in-hint">Use your photo top-right for profile or log out.</p>
+  <!-- START SCREEN -->
+  <div id="start-screen">
+    <div id="toast-start" class="toast-host" aria-live="polite"></div>
+    <div class="start-info-wrap">
+      <button type="button" class="start-info-btn" aria-describedby="start-info-tooltip"
+        aria-label="How the quiz works">
+        <span aria-hidden="true" class="start-info-icon">&#8505;</span>
+      </button>
+      <p id="start-info-tooltip" class="start-info-tooltip" role="tooltip">
+        There are three levels: easy, medium, and hard. You need at least
+        <strong>70%</strong> correct on each level to advance to the next one.
+      </p>
+    </div>
+    <div id="guest-block">
+      <h2>Enter Your Name</h2>
+      <input type="text" id="username" placeholder="Your name (guest)..." maxlength="40" />
+      <p class="guest-hint">Or <a href="login.html">log in</a> / <a href="signup.html">sign up</a> to save XP and
+        badges.</p>
+    </div>
+
+    <div id="logged-in-bar" class="logged-in-bar" style="display: none;">
+      <p class="logged-in-text">Playing as <strong id="sessionDisplayName"></strong></p>
+      <p class="logged-in-hint">Use your photo top-right for profile or log out.</p>
+    </div>
+
+    <h3>Select Topic</h3>
+    <select id="topic">
+      <option value="Sequence">Sequence</option>
+      <option value="Selection">Selection</option>
+      <option value="Iteration">Iteration</option>
+      <option value="Data Structures">Data Structures</option>
+      <option value="Basic Algorithms">Basic Algorithms</option>
+    </select>
+
+    <button id="startBtn">Start Quiz</button>
   </div>
 
-  <h3>Select Topic</h3>
-  <select id="topic">
-    <option value="general">General</option>
-    <option value="math">Math</option>
-    <option value="tech">Tech</option>
-  </select>
+  <!-- QUIZ -->
+  <div class="quiz-container" style="display:none;">
 
-  <button id="startBtn">Start Quiz</button>
-</div>
+    <div id="toast" class="toast-host" aria-live="polite"></div>
+    <div class="quiz-header">
+      <h1>Algorithm Learning Quiz App</h1>
+      <div id="timer">Time: 10s</div>
+    </div>
 
-<!-- QUIZ -->
-<div class="quiz-container" style="display:none;">
+    <div id="progress-bar">
+      <div id="progress"></div>
+    </div>
 
-  <div id="toast" class="toast-host" aria-live="polite"></div>
-  <div class="quiz-header">
-    <h1>Quiz App</h1>
-    <div id="timer">Time: 10s</div>
+    <div id="question-meta" class="question-meta"></div>
+
+    <div id="question"></div>
+
+    <div class="choices">
+      <button class="choice" onclick="selectAnswer(0)"></button>
+      <button class="choice" onclick="selectAnswer(1)"></button>
+      <button class="choice" onclick="selectAnswer(2)"></button>
+      <button class="choice" onclick="selectAnswer(3)"></button>
+    </div>
+
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+
+    <div id="score"></div>
+    <div id="final-score"></div>
+
+    <div id="leaderboard-container" style="display:none;">
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+    </div>
+
   </div>
 
-  <div id="progress-bar">
-    <div id="progress"></div>
-  </div>
-
-  <div id="question"></div>
-
-  <div class="choices">
-    <button class="choice" onclick="selectAnswer(0)"></button>
-    <button class="choice" onclick="selectAnswer(1)"></button>
-    <button class="choice" onclick="selectAnswer(2)"></button>
-    <button class="choice" onclick="selectAnswer(3)"></button>
-  </div>
-
-  <button id="nextBtn" onclick="nextQuestion()">Next</button>
-
-  <div id="score"></div>
-  <div id="final-score"></div>
-
-  <div id="leaderboard-container" style="display:none;">
-    <h3>Leaderboard</h3>
-    <ul id="leaderboard"></ul>
-  </div>
-
-</div>
-
-<script src="questions.js" defer></script>
-<script src="profile.js" defer></script>
-<script src="script.js" defer></script>
+  <script src="questions.js" defer></script>
+  <script src="profile.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
+
 </html>

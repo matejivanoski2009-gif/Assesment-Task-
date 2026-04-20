@@ -1,10 +1,10 @@
 const order = ["easy", "medium", "hard"];
-const QUESTION_SEC = 10;
+const QUESTION_SEC = 15;
 const CORRECT_ADVANCE_MS = 700;
 const STREAK_LENGTH = 3;
 const STREAK_BONUS_XP = 100;
 
-let selectedTopic = "general";
+let selectedTopic = "Sequence";
 let levelIndex = 0;
 let questions = [];
 let current = 0;
@@ -19,13 +19,19 @@ let answered = false;
 let timer = QUESTION_SEC;
 let interval;
 
+let incorrectQuestions = [];
+let retryMode = false;
+let questionsToRetry = [];
+
 let correctStreak = 0;
 
 // UI
 const qEl = document.getElementById("question");
+const questionMeta = document.getElementById("question-meta");
 const choices = document.querySelectorAll(".choice");
 const timerEl = document.getElementById("timer");
 const progress = document.getElementById("progress");
+const quizContainer = document.querySelector(".quiz-container");
 
 const lb = document.getElementById("leaderboard");
 const lbBox = document.getElementById("leaderboard-container");
@@ -221,6 +227,9 @@ document.getElementById("startBtn").addEventListener("click", () => {
 
   levelIndex = 0;
   score = 0;
+  incorrectQuestions = []; // Clear for new quiz
+  questionsToRetry = []; // Clear retry questions
+  retryMode = false; // Reset retry mode
   resetAnswerStreak();
 
   startLevel();
@@ -233,6 +242,7 @@ function startLevel() {
   questions = [...quizData[selectedTopic][level]];
   current = 0;
   levelScore = 0;
+  incorrectQuestions = []; // Clear incorrect questions for new level
 
   startTimer();
   loadQuestion();
@@ -269,25 +279,37 @@ function startTimer() {
 
 // ================= LOAD =================
 function loadQuestion() {
-  answered = false;
+  answered = true;
+  if (quizContainer) quizContainer.classList.add("quiz-fade-out");
 
-  const q = questions[current];
+  window.setTimeout(() => {
+    const q = questions[current];
 
-  let options = [...q.o]
-    .map(v => ({ v, r: Math.random() }))
-    .sort((a,b) => a.r - b.r)
-    .map(v => v.v);
+    let options = [...q.o]
+      .map(v => ({ v, r: Math.random() }))
+      .sort((a, b) => a.r - b.r)
+      .map(v => v.v);
 
-  correctIndex = options.indexOf(q.a);
+    correctIndex = options.indexOf(q.a);
 
-  qEl.textContent = q.q;
+    qEl.textContent = q.q;
 
-  choices.forEach((b, i) => {
-    b.textContent = options[i];
-    b.classList.remove("is-correct", "is-wrong");
-  });
+    const difficultyLabel = retryMode
+      ? "Retry"
+      : (order[levelIndex]
+        ? order[levelIndex].charAt(0).toUpperCase() + order[levelIndex].slice(1)
+        : "");
+    questionMeta.textContent = `${difficultyLabel} • Question ${current + 1} of ${questions.length}`;
 
-  progress.style.width = (current / questions.length) * 100 + "%";
+    choices.forEach((b, i) => {
+      b.textContent = options[i];
+      b.classList.remove("is-correct", "is-wrong");
+    });
+
+    progress.style.width = (current / questions.length) * 100 + "%";
+    if (quizContainer) quizContainer.classList.remove("quiz-fade-out");
+    answered = false;
+  }, 200);
 }
 
 // ================= ANSWER =================
@@ -314,6 +336,8 @@ function selectAnswer(i) {
     choices[correctIndex].classList.add("is-correct");
     playWrongSound();
     toast("Wrong!", "error");
+    // Track incorrect question
+    incorrectQuestions.push(questions[current]);
   }
 }
 
@@ -327,7 +351,11 @@ function nextQuestion() {
     startTimer();
     loadQuestion();
   } else {
-    finishLevel();
+    if (retryMode) {
+      showFinal();
+    } else {
+      finishLevel();
+    }
   }
 }
 
@@ -388,6 +416,17 @@ function showFinal() {
 
   lbBox.style.display = "block";
 
+  // Add retry incorrect questions button if there are incorrect questions
+  if (incorrectQuestions.length > 0) {
+    questionsToRetry = [...incorrectQuestions]; // Store for retry
+    const retryBtn = document.createElement("button");
+    retryBtn.textContent = `Retry ${incorrectQuestions.length} Incorrect Question${incorrectQuestions.length === 1 ? '' : 's'}`;
+    retryBtn.style.width = "100%";
+    retryBtn.style.marginTop = "10px";
+    retryBtn.onclick = () => retryIncorrectQuestions();
+    lbBox.appendChild(retryBtn);
+  }
+
   const btn = document.createElement("button");
   btn.textContent = "Start Again";
   btn.style.width = "100%";
@@ -396,6 +435,31 @@ function showFinal() {
   btn.onclick = () => location.reload();
 
   lbBox.appendChild(btn);
+}
+
+// ================= RETRY INCORRECT QUESTIONS =================
+function retryIncorrectQuestions() {
+  // Reset quiz state
+  levelIndex = 0;
+  score = 0;
+  current = 0;
+  levelScore = 0;
+  retryMode = true; // Enable retry mode
+  resetAnswerStreak();
+  incorrectQuestions = []; // Clear for the retry session
+
+  // Set questions to only the incorrect ones
+  questions = [...questionsToRetry];
+
+  // Hide final screen and show quiz
+  document.getElementById("leaderboard").style.display = "none";
+  document.querySelector(".quiz-container").style.display = "block";
+  document.querySelector(".choices").style.display = "flex";
+  document.getElementById("nextBtn").style.display = "block";
+
+  // Start the retry quiz
+  startTimer();
+  loadQuestion();
 }
 
 // ================= LEADERBOARD =================
