@@ -1,8 +1,8 @@
 # Assessment-Task 1 - Software Engineering Year 11
-This is the web application for the Software Engineering Task.
+This is the web application for the Software Engineering Task (Algorithm Academy).
 
 ## Overview
-This web application is an interactive quiz designed to aid Software Engineering students in learning and understanding key algorithmic concepts. It focuses on topics such as sequence, data structures, basic algorithms and others. The overall goal of this web application is to combine learning with engagement.
+'Algorithm Academy' is an interactive quiz designed to aid Software Engineering students in learning and understanding key algorithmic concepts. It focuses on topics such as sequence, data structures, basic algorithms and others. The overall goal of this web application is to combine learning with engagement.
 
 ## Features:
 The quiz application includes a variety of features that improve user experience, such as:
@@ -46,7 +46,7 @@ Files:
 - school-logo.png - School logo
 
 ## Security
-This application does not collect personal data. Basic validation is utilised. For more details, see the SECURITY.md file.
+'Algorithm Academy' does not collect personal data. Basic validation is utilised. For more details, see the SECURITY.md file.
 
 ## Note
 Developed by Matej Ivanoski - Year 11 Software Engineering 
