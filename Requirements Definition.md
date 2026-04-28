@@ -10,14 +10,12 @@ Functional Requirements involve:
 - Must allow users to create an account, sign up and log in
 - Must allow users to select quiz topics
 - Must display multiple-choice questions
-- Must automatically give feedback to the user if the answer is correct or incorrect
 - Must include a timer for each question
 
 Non-functional requirements involve:
 - Must be simple and easy to use
 - Must include readable fonts, clear buttons and clear colours
 - Must run smoothly
-- Design must be engaging and interactive
 - Code should remain organised
 
 ### Acceptance Criteria:
@@ -28,12 +26,12 @@ Testing must show that the website performs smoothly without any errors.
 
 ### Glossary:
 
-Algorithm: A set of steps used to solve a problem.
-Sequence: Instructions performed in order.
-Selection: A decision made in a program.
-Iteration: Repetition of instructions through loops.
-Subprograms: A smaller section of code designed to perform a task.
-Validation: Checking whether the data entered is correct.
+- Algorithm --> A set of steps used to solve a problem.
+- Sequence --> Instructions performed in order.
+- Selection --> A decision made in a program.
+- Iteration --> Repetition of instructions through loops.
+- Subprograms --> A smaller section of code designed to perform a task.
+- Validation --> Checking whether the data entered is correct.
 
 ### References:
 
