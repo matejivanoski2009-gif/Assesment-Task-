@@ -390,9 +390,9 @@ body {
   position: relative;
   z-index: 10;
   background: var(--color-surface);
-  padding: 36px 42px;
-  border-radius: 18px;
-  width: min(760px, calc(100vw - 32px));
+  padding: 48px 56px;
+  border-radius: 22px;
+  width: min(860px, calc(100vw - 32px));
   max-width: 100%;
   box-sizing: border-box;
   text-align: center;
@@ -514,9 +514,11 @@ button {
 
 .choice {
   width: 100%;
-  margin: 6px 0;
+  margin: 10px 0;
+  padding: 14px 18px;
   background: var(--color-choice-bg);
   color: var(--color-choice-text);
+  font-size: 1.05rem;
 }
 
 .choice:hover {
@@ -540,7 +542,9 @@ button {
 
 #nextBtn {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 16px;
+  padding: 14px 20px;
+  font-size: 1.1rem;
   background: var(--color-primary-btn);
   color: var(--color-primary-btn-text);
 }
@@ -550,13 +554,13 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   text-align: left;
 }
 
 .quiz-header h1 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.7rem;
   flex: 1;
   text-align: left;
   color: var(--color-text);
@@ -565,19 +569,19 @@ button {
 #timer {
   flex-shrink: 0;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--color-accent);
-  padding: 6px 12px;
+  padding: 8px 16px;
   background: var(--color-timer-bg);
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* PROGRESS */
 #progress-bar {
-  height: 10px;
+  height: 14px;
   background: var(--color-progress-track);
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 7px;
+  margin-bottom: 14px;
 }
 
 #progress {
@@ -587,11 +591,17 @@ button {
 }
 
 #question {
-  font-size: 1.12rem;
-  line-height: 1.45;
-  margin: 0 0 2rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  margin: 0 0 2.5rem;
   padding: 0 0.25rem;
   color: var(--color-text);
+}
+
+#question-meta {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-muted);
 }
 
 /* LEADERBOARD */

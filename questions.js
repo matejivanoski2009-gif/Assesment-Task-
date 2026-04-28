@@ -154,6 +154,32 @@ const quizData = {
       { q: "Algorithms rely on:", o: ["Logic and structure", "Colour", "Design", "Input only"], a: "Logic and structure" },
       { q: "What is the output? x <- 1, IF x = 1 THEN, PRINT 'Yes' ELSE PRINT 'No'", o: ["No", "Error", "Yes", "Both"], a: "Yes" }
     ]
+  },
+  "Debugging & Errors": {
+    easy: [
+      { q: "What is a syntax error?", o: ["Error in logic", "Mistake in code structure", "Wrong output", "Missing variable value"], a: "Mistake in code structure" },
+      { q: "Which tool helps display errors in JavaScript?", o: ["Paint", "Console", "Keyboard", "Calculator"], a: "Console" },
+      { q: "What does console.log() do?", o: ["Deletes code", "Displays output in console", "Stops program", "Runs a loop"], a: "Displays output in console" },
+      { q: "What happens if you forget a semicolon or bracket?", o: ["Logical error", "Syntax error", "Runtime error", "No error"], a: "Syntax error" },
+      { q: "What is debugging?", o: ["Writing code", "Fixing errors in code", "Deleting code", "Running code"], a: "Fixing errors in code" },
+      { q: "What type of error stops the program from running?", o: ["Logical error", "Syntax error", "Minor error", "Output error"], a: "Syntax error" }
+    ],
+    medium: [
+      { q: "What is a logical error?", o: ["Code won't run", "Program runs but gives wrong output", "Missing bracket", "Typo"], a: "Program runs but gives wrong output" },
+      { q: "What happens if a variable is not defined?", o: ["No problem", "Syntax error", "Reference error", "Loop error"], a: "Reference error" },
+      { q: "Which is an example of a runtime error?", o: ["Missing bracket", "Using undefined variable", "Wrong answer", "Comment error"], a: "Using undefined variable" },
+      { q: "Why is console.log() useful?", o: ["Makes program faster", "Helps track variable values", "Deletes errors", "Stops loops"], a: "Helps track variable values" },
+      { q: "What does this cause?\nlet x = 5\nconsole.log(y);", o: ["Syntax error", "Logical error", "Reference error", "No error"], a: "Reference error" },
+      { q: "What is the main goal of debugging?", o: ["Add more code", "Remove all variables", "Find and fix errors", "Slow program"], a: "Find and fix errors" }
+    ],
+    hard: [
+      { q: "What type of error is this?\nif (x=5) {", o: ["Syntax error", "Logical error", "Runtime error", "No error"], a: "Logical error" },
+      { q: "What will happen here?\n\nlet x;\nconsole.log(x);", o: ["Error", "undefined", "0", "null"], a: "undefined" },
+      { q: "Why are logical errors harder to find?", o: ["Program crashes", "No error message shown", "Code won't run", "Syntax highlights them"], a: "No error message shown" },
+      { q: "What is the best way to debug step-by-step?", o: ["Guessing", "Deleting code", "Using console.log", "Restarting computer"], a: "Using console.log" },
+      { q: "What happens in this code?\nif (true) {\nconsole.log(\"Hello\");", o: ["Works fine", "Syntax error", "Logical error", "Runtime error"], a: "Syntax error" },
+      { q: "What type of error is incorrect output due to wrong formula?", o: ["Syntax error", "Runtime error", "Logical error", "Reference error"], a: "Logical error" }
+    ]
   }
 };
 
