@@ -50,8 +50,12 @@ function getAudioContext() {
 }
 
 function playTone(freq, startTime, duration, type, peakGain) {
-  if (window.QuizAudio && QuizAudio.isMuted()) return;
   const ctx = getAudioContext();
+  // Get current volume from QuizAudio if available, otherwise use full volume
+  const volume = (window.QuizAudio && typeof QuizAudio.getVolume === "function")
+    ? QuizAudio.getVolume()
+    : 1;
+  const adjustedGain = peakGain * volume;
   const osc = ctx.createOscillator();
   const g = ctx.createGain();
   osc.connect(g);
@@ -59,7 +63,7 @@ function playTone(freq, startTime, duration, type, peakGain) {
   osc.frequency.value = freq;
   osc.type = type;
   g.gain.setValueAtTime(0, startTime);
-  g.gain.linearRampToValueAtTime(peakGain, startTime + 0.02);
+  g.gain.linearRampToValueAtTime(adjustedGain, startTime + 0.02);
   g.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
   osc.start(startTime);
   osc.stop(startTime + duration + 0.05);
@@ -208,6 +212,12 @@ document.getElementById("startBtn").addEventListener("click", () => {
   const nameInput = document.getElementById("username").value;
   const topic = document.getElementById("topic").value;
 
+  // Validate topic selection
+  if (!topic || !quizData[topic]) {
+    toast("Please select a valid topic", "error");
+    return;
+  }
+
   const name =
     window.ProfileApp && typeof ProfileApp.getDisplayPlayerName === "function"
       ? ProfileApp.getDisplayPlayerName(nameInput)
@@ -238,6 +248,16 @@ document.getElementById("startBtn").addEventListener("click", () => {
 // ================= LEVEL =================
 function startLevel() {
   const level = order[levelIndex];
+
+  // Error handling for invalid topic or level
+  if (!quizData[selectedTopic] || !quizData[selectedTopic][level]) {
+    console.error("Invalid topic or level:", selectedTopic, level);
+    toast("Error loading questions. Resetting to Sequence - Easy.", "error");
+    selectedTopic = "Sequence";
+    levelIndex = 0;
+    startLevel();
+    return;
+  }
 
   questions = [...quizData[selectedTopic][level]];
   current = 0;
@@ -367,7 +387,7 @@ function finishLevel() {
   let percent = (levelScore / questions.length) * 100;
   const level = order[levelIndex];
 
-  if (percent >= 70) {
+  if (percent >= 40) {
     toast("Passed " + level, "success");
     score += levelScore;
     levelIndex++;

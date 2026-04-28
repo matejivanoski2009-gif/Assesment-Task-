@@ -77,6 +77,32 @@ const quizData = {
       { q: "Which of the following best describes the core mechanism of an iterative process?", o: ["Branching logic based on a single condition.", "Sequential execution of instructions", "Output of one cycle becomes the input for the next", "A static sequence of instructions run once"], a: "Output of one cycle becomes the input for the next" }
     ]
   },
+  Subprograms: {
+    easy: [
+      { q: "What is a subprogram?", o: ["A type of variable", "A small program inside a program", "A loop", "A condition"], a: "A small program inside a program" },
+      { q: "What is another name for a subprogram?", o: ["Variable", "Loop", "Function", "Array"], a: "Function" },
+      { q: "Why are subprograms used?", o: ["To make code longer", "To repeat code easily", "To remove variables", "To slow programs"], a: "To repeat code easily" },
+      { q: "Which keyword is commonly used to define a function?", o: ["var", "let", "function", "if"], a: "function" },
+      { q: "What does a subprogram usually do?", o: ["Store data", "Perform a task", "Display images", "Delete code"], a: "Perform a task" },
+      { q: "Can a subprogram be used more than once?", o: ["No", "Only once", "Yes", "Only in loops"], a: "Yes" }
+    ],
+    medium: [
+      { q: "What is a parameter?", o: ["A loop", "Input to a function", "Output of a function", "A variable name"], a: "Input to a function" },
+      { q: "What does a return statement do?", o: ["Ends the program", "Sends a value back", "Starts a loop", "Displays output"], a: "Sends a value back" },
+      { q: "What happens if a function has no return?", o: ["Error", "Returns nothing (undefined)", "Stops working", "Loops forever"], a: "Returns nothing (undefined)" },
+      { q: "What is the benefit of subprograms?", o: ["Makes code harder", "Reduces repetition", "Removes logic", "Slows execution"], a: "Reduces repetition" },
+      { q: "What is an argument?", o: ["A loop", "A value passed into a function", "A condition", "A return value"], a: "A value passed into a function" },
+      { q: "What is modular programming?", o: ["Writing one long program", "Breaking program into parts", "Using only loops", "Avoiding functions"], a: "Breaking program into parts" }
+    ],
+    hard: [
+      { q: "What is the difference between a parameter and an argument?", o: ["No difference", "Parameter is input, argument is output", "Parameter is variable in function, argument is value passed", "Argument is loop, parameter is condition"], a: "Parameter is variable in function, argument is value passed" },
+      { q: "What will this return? function add(a,b) { return a + b; } add(2,3);", o: ["23", "5", "undefined", "error"], a: "5" },
+      { q: "What happens if you call a function with missing arguments?", o: ["Error", "Uses default or undefined", "Stops program", "Infinite loop"], a: "Uses default or undefined" },
+      { q: "What is scope in subprograms?", o: ["Size of code", "Where variables can be accessed", "Speed of function", "Number of loops"], a: "Where variables can be accessed" },
+      { q: "Why is code reuse important?", o: ["Makes code longer", "Saves time and reduces errors", "Slows program", "Removes logic"], a: "Saves time and reduces errors" },
+      { q: "What is a pure function?", o: ["Uses global variables", "Always returns random values", "Output depends only on input", "Has no parameters"], a: "Output depends only on input" }
+    ]
+  },
   "Data Structures": {
     easy: [
       { q: "What is an array?", o: ["Loop", "Condition", "List of data", "Output"], a: "List of data" },
@@ -130,3 +156,4 @@ const quizData = {
     ]
   }
 };
+

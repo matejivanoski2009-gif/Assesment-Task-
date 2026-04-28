@@ -129,8 +129,11 @@ body {
   top: 58px;
   left: 16px;
   z-index: 260;
-  line-height: 0;
+  line-height: 1.2;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .school-logo-link:focus-visible {
@@ -146,7 +149,18 @@ body {
   object-fit: contain;
 }
 
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
 .school-logo-link:hover .school-logo {
+  opacity: 0.92;
+}
+
+.school-logo-link:hover .logo-text {
   opacity: 0.92;
 }
 
@@ -674,10 +688,11 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  min-height: 48px;
 }
 
 .toast-host:not(:empty) {
-  margin-bottom: 12px;
+  min-height: 48px;
 }
 
 .toast {

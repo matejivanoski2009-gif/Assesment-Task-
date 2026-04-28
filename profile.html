@@ -1,99 +1,99 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your profile — ASCC Quiz</title>
-<link rel="stylesheet" href="style.css">
-<script src="theme.js"></script>
-<script src="audio.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your profile — ASCC Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="audio.js" defer></script>
 </head>
+
 <body data-page="profile">
 
-<div class="top-marquee" role="banner">
-  <div class="marquee-viewport">
-    <div class="marquee-track">
-      <span class="marquee-segment">All Saints Catholic College · Software Engineering Quiz · </span>
-      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
-      <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz · </span>
+  <div class="top-marquee" role="banner">
+    <div class="marquee-viewport">
+      <div class="marquee-track">
+        <span class="marquee-segment">All Saints Catholic College · Software Engineering Quiz · </span>
+        <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz ·
+        </span>
+        <span class="marquee-segment" aria-hidden="true">All Saints Catholic College · Software Engineering Quiz ·
+        </span>
+      </div>
     </div>
   </div>
-</div>
 
-<a
-  href="https://ascc.syd.catholic.edu.au/"
-  class="school-logo-link"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Visit All Saints Catholic College website"
->
-  <img src="school-logo.png" alt="" class="school-logo">
-</a>
+  <a href="https://ascc.syd.catholic.edu.au/" class="school-logo-link" target="_blank" rel="noopener noreferrer"
+    aria-label="Visit All Saints Catholic College website">
+    <img src="school-logo.png" alt="" class="school-logo">
+  </a>
 
-<footer class="page-footer">
-  <span class="footer-author">Made by Matej Ivanoski</span>
-  <span class="footer-copy" title="All rights reserved" aria-label="All rights reserved">©</span>
-</footer>
+  <footer class="page-footer">
+    <span class="footer-author">Made by Matej Ivanoski</span>
+    <span class="footer-copy" title="All rights reserved" aria-label="All rights reserved">©</span>
+  </footer>
 
-<div class="bottom-controls" role="group" aria-label="Theme and sound">
-  <button type="button" id="muteToggle" class="toolbar-btn mute-toggle" aria-pressed="false">
-    Mute
-  </button>
-  <button type="button" id="themeToggle" class="toolbar-btn theme-toggle" aria-label="Switch theme">
-    Light mode
-  </button>
-</div>
-
-<main class="standalone-page">
-  <div id="profile-toast-host" class="toast-host profile-toast-standalone" aria-live="polite"></div>
-  <div class="standalone-card profile-standalone-card">
-    <a href="index.html" class="standalone-back auth-link btn-secondary">&larr; Back to quiz</a>
-    <h1 class="standalone-title">Your profile</h1>
-
-    <div class="profile-avatar-block">
-      <div class="profile-avatar-frame">
-        <img id="profileAvatarPreview" class="profile-avatar-img" alt="Your avatar" />
-        <span id="profileAvatarPlaceholder" class="profile-avatar-placeholder">No avatar</span>
-      </div>
-      <label class="profile-avatar-upload">
-        Upload image
-        <input type="file" id="profileAvatarInput" accept="image/*" hidden />
-      </label>
-    </div>
-
-    <div class="profile-xp-block">
-      <div class="profile-level-row">
-        <span>Level <strong id="profileLevelNum">1</strong></span>
-        <span class="profile-total-xp" id="profileTotalXp">0 XP</span>
-      </div>
-      <div class="profile-xp-bar-outer">
-        <div id="profileXpFill" class="profile-xp-bar-fill"></div>
-      </div>
-      <p id="profileXpLabel" class="profile-xp-label">0 / 280 XP to next level</p>
-    </div>
-
-    <div class="profile-best-block">
-      <span class="profile-best-label">All-time best quiz score</span>
-      <strong id="profileBestScore" class="profile-best-value">0</strong>
-    </div>
-
-    <div class="profile-levels-block">
-      <h2 class="profile-levels-title">Levels &amp; XP</h2>
-      <p class="profile-levels-hint">
-        Each level spans <strong>280 total XP</strong>. You earn <strong>15 XP</strong> per correct answer when you
-        <strong>complete</strong> a quiz. The bar above shows how far you are inside your current level.
-      </p>
-      <div id="profileLevelsList" class="profile-levels-list" aria-label="XP ranges per level"></div>
-    </div>
-
-    <div class="profile-badges-block">
-      <h2 class="profile-badges-title">Badges</h2>
-      <p class="profile-badges-hint">Earn XP from correct answers on completed quizzes to unlock tiers.</p>
-      <div id="profileBadgesRow" class="profile-badges-row"></div>
-    </div>
+  <div class="bottom-controls" role="group" aria-label="Theme and sound">
+    <button type="button" id="muteToggle" class="toolbar-btn mute-toggle" aria-pressed="false">
+      Mute
+    </button>
+    <button type="button" id="themeToggle" class="toolbar-btn theme-toggle" aria-label="Switch theme">
+      Light mode
+    </button>
   </div>
-</main>
 
-<script src="profile.js" defer></script>
+  <main class="standalone-page">
+    <div id="profile-toast-host" class="toast-host profile-toast-standalone" aria-live="polite"></div>
+    <div class="standalone-card profile-standalone-card">
+      <a href="index.html" class="standalone-back auth-link btn-secondary">&larr; Back to quiz</a>
+      <h1 class="standalone-title">Your profile</h1>
+
+      <div class="profile-avatar-block">
+        <div class="profile-avatar-frame">
+          <img id="profileAvatarPreview" class="profile-avatar-img" alt="Your avatar" />
+          <span id="profileAvatarPlaceholder" class="profile-avatar-placeholder">No avatar</span>
+        </div>
+        <label class="profile-avatar-upload">
+          Upload image
+          <input type="file" id="profileAvatarInput" accept="image/*" hidden />
+        </label>
+      </div>
+
+      <div class="profile-xp-block">
+        <div class="profile-level-row">
+          <span>Level <strong id="profileLevelNum">1</strong></span>
+          <span class="profile-total-xp" id="profileTotalXp">0 XP</span>
+        </div>
+        <div class="profile-xp-bar-outer">
+          <div id="profileXpFill" class="profile-xp-bar-fill"></div>
+        </div>
+        <p id="profileXpLabel" class="profile-xp-label">0 / 280 XP to next level</p>
+      </div>
+
+      <div class="profile-best-block">
+        <span class="profile-best-label">All-time best quiz score</span>
+        <strong id="profileBestScore" class="profile-best-value">0</strong>
+      </div>
+
+      <div class="profile-levels-block">
+        <h2 class="profile-levels-title">Levels &amp; XP</h2>
+        <p class="profile-levels-hint">
+          Each level spans <strong>280 total XP</strong>. You earn <strong>15 XP</strong> per correct answer when you
+          <strong>complete</strong> a quiz. The bar above shows how far you are inside your current level.
+        </p>
+        <div id="profileLevelsList" class="profile-levels-list" aria-label="XP ranges per level"></div>
+      </div>
+
+      <div class="profile-badges-block">
+        <h2 class="profile-badges-title">Badges</h2>
+        <p class="profile-badges-hint">Earn XP from correct answers on completed quizzes to unlock tiers.</p>
+        <div id="profileBadgesRow" class="profile-badges-row"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="profile.js" defer></script>
 </body>
+
 </html>
