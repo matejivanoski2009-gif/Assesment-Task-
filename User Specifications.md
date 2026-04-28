@@ -1,7 +1,12 @@
 # Software Development:
 ## User Specifications:
 
-## Target Users:
-Year 11 Software Engineering students are learning about algorithms.
+### Target Users:
+The target users for this web application are Year 11 Software Engineering students who are interested in learning about algorithms. The application is designed to help beginners and advanced learners by offering them a variety of difficulty levels, which allows the user to expand on their understanding of algorithms.
 
-Users must be able to start the game and select an algorithm-related topic of their choice. They should be able to read instructions, start the challenges and try again or quit. Overall, it must be simple and intuitive, allowing students to learn in an efficient and concise way while still being engaging. 
+### Functional Requirements:
+Users will be faced with an intuitive web browser interface that displays directions and responses to user actions. This includes clear buttons, readable text and more. The system must allow users to create an account or log in via a username and a password containing a minimum of 4 characters. If the user wishes not to play with an account, they must be able to play as a guest with a username. After being logged in, users must be able to start the game and select an algorithm-related topic of their choice wether it be sequence, iteration, data structures and others. They should be able to read instructions, start the challenges, re-attempt the incorrect answers, or retry the whole quiz again. Moreover, the quiz should display multiple-choice questions based on the topics and difficulty. The users should be able to select and answer and be provided with instant feedback, notifying them if their answer was correct or incorrect. As the user progresses throughout the quiz, the system must update the score and progress bar. The timer must work and start at 15 seconds. If the time runs out, the question should be marked incorrect immediately, and after the quiz is completed, the final score and position on the leaderboard should be displayed. In addition, when logged in, the system needs to include a profile including badges, rank level, profile picture, XP and streaks. Customisation features such as light mode/dark mode and sound should be available.
+
+### Non-Functional Requirements:
+The application should be easy to use with a clear interface that allows software engineering students to navigate around with no issues. There should be no delay or lag between moving questions. The web application must function properly and should be compatible on any device (laptop, phone, iPad) and any browser (Chrome, Safari, Edge, Firefox). Security needs to be included and needs to ensure that the data entered is appropriate. It should be visually appealing and engaging via animations and other elements that improve the user experience significantly. 
+
