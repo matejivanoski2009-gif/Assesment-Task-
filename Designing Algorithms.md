@@ -16,7 +16,7 @@ Structure chart and flowchart created using Lucidchart, available at lucidchart.
 
 # Pseudocode:
 
-## Sequence
+## Sequence:
 
 ```
 displayHomePage()
@@ -25,7 +25,7 @@ score ← 0
 level ← 1
 ```
 
-## Selection
+## Selection:
 
 ```
 IF userAnswer = correctAnswer THEN
@@ -36,7 +36,7 @@ ELSE
 ENDIF
 ```
 
-## Iteration
+## Iteration:
 
 ```
 WHILE level ≤ totalLevels
@@ -58,7 +58,25 @@ WHILE level ≤ totalLevels
 ENDWHILE
 ```
 
-## Final Output
+## Subprograms:
+
+```text
+FUNCTION checkAnswer(userAnswer, correctAnswer)
+
+    IF userAnswer = correctAnswer THEN
+        display "Correct"
+        score ← score + 1
+    ELSE
+        display "Incorrect"
+    ENDIF
+
+END FUNCTION
+
+userAnswer ← getUserInput()
+checkAnswer(userAnswer, correctAnswer)
+```
+
+## Final Output:
 
 ```
 display "Game Over"
